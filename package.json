@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "build": "webpack -p"
+    "test": "webpack-dev-server --open  --config-name test",
+    "build": "webpack -p --config-name umd",
+    "bundle": "webpack --devtool source-map ./transaction/transaction.js -o transaction.bundle.js"
   },
   "keywords": [],
   "author": "",
