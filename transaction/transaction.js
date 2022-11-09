@@ -1,6 +1,6 @@
 const Long = require('long');
 const protobuf = require("protobufjs");
-const Buffer = require("buffer/").Buffer;
+//const Buffer = require("buffer/").Buffer;
 const jsonDescriptor = require("./structures.json");
 const Crypto = require("./crypto");
 const Coins = require("./coins");
@@ -281,7 +281,7 @@ class Transaction {
     }
 
     encode() {
-        return transactionProto.encode(this._data).finish();
+        return Buffer.from(transactionProto.encode(this._data).finish());
     }
 
     verify() {
